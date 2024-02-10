@@ -1,4 +1,4 @@
 # E-Market-Trove
-e-commerce website for cpsc 362
+E-Commerce Website for CPSC 362
 
-test
+Testing.....
