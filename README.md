@@ -11,25 +11,20 @@ listings which will be viewable in in the homepage. Upon purchase, a receipt wil
 
 ## About the project:
 
-### Dependencies
+### Programming Languages
 
 * Python
 * React, node.js
 
-### Installing
+### User Interface 
 
 * How/where to download your program
 * Any modifications needed to be made to files/folders
 
-### Executing program
+### Backend/Database
 
 * How to run the program
 * Step-by-step bullets
-```
-code blocks for commands
-```
 
 ## Authors
 
-ex. Victor Vu  
-ex. [@VictorVu](vuvictor@csu.fullerton.edu)
