@@ -1,10 +1,13 @@
 # E-Market Trove
 
-Am e-commerce website dedicated to selling a wide variety of goods at the highest standard.
+A web store dedicated to selling a wide variety of goods at the highest standard.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+E-Market Trove is meant to be a multi-page e-commerce website designed for
+selling various goods. Users can browse a collection of items, search for
+specific products, sign up, and pay using a credit card. Upon purchase, a
+receipt will be mailed to the customer.
 
 ## About the project:
 
