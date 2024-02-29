@@ -1,6 +1,6 @@
-# Project Title
+# E-Market Trove
 
-Simple overview of use/purpose.
+Am e-commerce website dedicated to selling a wide variety of goods at the highest standard.
 
 ## Description
 
