@@ -14,18 +14,23 @@ Upon purchase, a receipt will be mailed to the customer for records.
 
 ### Programming Languages / Frameworks
 
-* Python & JavaScript
-* React & Node.js
+* Python | JavaScript
+* React | Node.js
 
 ### User Interface 
 
 * 
 * 
 
-### Backend/Database
+### Backend / Database
 
 * 
 * 
 
-## Authors
+## Contributors
+- Amelie Gomez (agrnerd17)
+- Victor Vu (vuvictor1)
+- Isaac Sanchez ()
+- Brian Navarro ()
+- Joshua Reyes ()
 
