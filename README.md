@@ -19,8 +19,11 @@ Upon purchase, a receipt will be mailed to the customer for records.
 
 ### User Interface 
 
-* 
-* 
+Upon accessing the webpage as guest user, basic functionalities are permited, which include visibility of the 
+homepage, use of the search bar, and selecting payment processing methods. Additionally, at front page, images 
+of featured items will be displayed alongside the E-Market Trove logo.
+
+For logged in users, the UI for a rating system becomes available alongside a tab that tracks past transactions.
 
 ### Backend / Database
 
