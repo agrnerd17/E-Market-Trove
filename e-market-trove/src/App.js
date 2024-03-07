@@ -23,4 +23,4 @@ function EMarketTrove() {
   );
 }
 
-export default EMarketTrove; // alows other files read App.js function
+export default EMarketTrove; // alows other files to read App.js function
