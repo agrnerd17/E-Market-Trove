@@ -1,34 +1,39 @@
 # E-Market Trove
 
-Am e-commerce website dedicated to selling a wide variety of goods at the highest standard.
+A web store dedicated to selling a wide assortment of goods at the highest standard.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+E-Market Trove is meant to be a multi-page e-commerce website designed for digital transactions 
+to facilitate the exchange of common household products such as appliances, clothing, decor, gadgets etc. 
+Users are able to browse  through a collection of items, search for specific products, sign up and 
+pay using a credit card. Furthermore, merchants can create listings which will be viewable on the homepage. 
+Upon purchase, a receipt will be mailed to the customer for records.
 
 ## About the project:
 
-### Dependencies
+### Programming Languages / Frameworks
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Python | JavaScript
+* React | Node.js
 
-### Installing
+### User Interface 
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+Upon accessing the webpage as guest user, basic functionalities are permited, which include visibility of the 
+homepage, use of the search bar, and selecting payment processing methods. Additionally, at front page, images 
+of featured items will be displayed alongside the E-Market Trove logo.
 
-### Executing program
+For logged in users, the UI for a rating system becomes available alongside a tab that tracks past transactions.
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+### Backend / Database
 
-## Authors
+* 
+* 
 
-Contributors names and contact info
+## Contributors
+- Amelie Gomez (agrnerd17)
+- Victor Vu (vuvictor1)
+- Isaac Sanchez ()
+- Brian Navarro ()
+- Joshua Reyes ()
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)

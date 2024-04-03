@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'; // Import in style settings
+import React from 'react'; // Import react for front end
+import logo from './logo.svg'; // Import placeholder logo until we can make our own
 
-function App() {
+// Main website function
+function EMarketTrove() {
+  React.useEffect(() => { // allow react gui elemeents 
+    document.title = "E-Market Trove";
+  }, []); // set title for tab
+
+  // Return output to display
   return (
     <div className="App">
+      <h1>E-Market Trove</h1> {/* set title for website*/}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Just testing things. - Victor <br /> {/* break for a new line */}
+          This is placeholder code until we design a better foundation.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
 }
 
-export default App;
+export default EMarketTrove; // alows other files to read App.js function
