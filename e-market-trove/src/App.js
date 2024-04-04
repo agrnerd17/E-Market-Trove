@@ -1,4 +1,4 @@
-import React from 'react'; // Import function from react
+import React from 'react'; // Import functions from react
 
 // Show featured product information
 const featuredProducts = [
@@ -14,7 +14,7 @@ const productsForSale = [
   { id: 6, name: 'Product for Sale 3', price: 50, imageUrl: 'https://via.placeholder.com/150' },
 ];
 
-// Product function
+// Showcases the product, displays button for interaction
 const Product = ({ product }) => (
   <div className="product">
     <img src={product.imageUrl} alt={product.name} />
@@ -26,7 +26,7 @@ const Product = ({ product }) => (
   </div>
 );
 
-// ProductList function
+// Map out product information
 const ProductList = ({ products }) => (
   <div className="product-list">
     {products.map(product => (
@@ -35,24 +35,22 @@ const ProductList = ({ products }) => (
   </div>
 );
 
-// Main function to access list and products
+// Main function to access list and display GUI
 const App = () => (
   <div className="app">
     <header>
-      <div className="logo-search">
-        <h1>E-Market Trove</h1>
-        <input type="text" placeholder="Search..." />
+      <div className="logo-search"> {/* used to style header, connects with CSS class */}
+        <input type="text" placeholder="Search..." /> {/* placerholder search bar for now */}
       </div>
       <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
+        <ul> {/* navigational/divider links */}
           <li><a href="/">Products</a></li>
           <li><a href="/">About</a></li>
           <li><a href="/">Contact</a></li>
         </ul>
       </nav>
     </header>
-    <main className="main-content">
+    <main className="main-content"> {/* class containing GUI components */}
       <section className="featured-products">
         <h2>Featured Products</h2>
         <ProductList products={featuredProducts} />
@@ -63,7 +61,7 @@ const App = () => (
       </section>
     </main>
     <footer>
-      <p>&copy; 2024 E Market Trove</p>
+      <p>&copy; 2024 E-Market Trove</p> {/* copyright footer */}
     </footer>
   </div>
 );
