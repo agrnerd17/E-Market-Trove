@@ -14,7 +14,7 @@ Upon purchase, a receipt will be mailed to the customer for records.
 
 ### Programming Languages / Frameworks
 
-* Python | JavaScript
+* JavaScript
 * React | Node.js
 
 ### User Interface 
