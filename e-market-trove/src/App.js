@@ -1,26 +1,27 @@
 import './App.css'; // Import in style settings
 import React from 'react'; // Import react for front end
-import logo from './logo.svg'; // Import placeholder logo until we can make our own
+import Navbar from "./navbar"
+import Product from "./pages/products"
+import Home from "./pages/home"
+import About from "./pages/about"
+import Contact from './pages/contact';
+import { Route, Routes } from "react-router-dom"
 
-// Main website function
-function EMarketTrove() {
-  React.useEffect(() => { // allow react gui elemeents 
-    document.title = "E-Market Trove";
-  }, []); // set title for tab
-
-  // Return output to display
+function App() {
   return (
-    <div className="App">
-      <h1>E-Market Trove</h1> {/* set title for website*/}
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Just testing things. - Victor <br /> {/* break for a new line */}
-          This is placeholder code until we design a better foundation.
-        </p>
-      </header>
-    </div>
-  );
+    <>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pricing" element={<Product />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+
+        </Routes>
+      </div>
+    </>
+  )
 }
 
-export default EMarketTrove; // alows other files to read App.js function
+export default App
