@@ -33,7 +33,7 @@ For logged in users, the UI for a rating system becomes available alongside a ta
 ## Contributors
 - Amelie Gomez (agrnerd17)
 - Victor Vu (vuvictor1)
-- Isaac Sanchez ()
+- Isaac Sanchez (Isaacsan02)
 - Brian Navarro ()
 - Joshua Reyes ()
 
