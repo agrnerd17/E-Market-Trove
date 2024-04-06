@@ -1,3 +1,5 @@
+import '../styles.css'; // Import style settings from one directory above
+
 // Show featured product information
 const featuredProducts = [
     { id: 1, name: 'Featured Product 1', price: 50, imageUrl: 'https://via.placeholder.com/150' },
@@ -33,7 +35,7 @@ const featuredProducts = [
     </div>
   );
 
-
+// Home's main function
 const App = () => (
     <div className="app">
         <h1>Home</h1>
@@ -58,7 +60,6 @@ const App = () => (
     </div>
   );
   
-
-export default function Home() {
+export default function Home() { // export home to other files
    return App();
 }

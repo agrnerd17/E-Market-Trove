@@ -43,3 +43,18 @@ body {
     align-items: center;
     padding: .25rem;
 }
+
+/* Format featured products into a horizontal row */
+.featured-products {
+    overflow-x: auto; /* adjust in case the width exceeds box */
+    white-space: nowrap; /* do not wrap into the next line */
+  }
+
+/* Format products into a horizontal row */
+.product {
+    display: inline-block; /* display products in a row */
+    margin-right: 10px; /* 10 spacing between each product */
+  }
+  
+
+
