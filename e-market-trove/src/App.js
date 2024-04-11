@@ -5,6 +5,12 @@ import Product from "./pages/products"
 import Home from "./pages/home"
 import About from "./pages/about"
 import Contact from './pages/contact';
+import Clothing from './pages/clothing';
+import Furniture from './pages/furniture';
+import Technology from './pages/tech';
+
+
+
 import { Route, Routes } from "react-router-dom"
 
 function App() {
@@ -17,6 +23,12 @@ function App() {
           <Route path="/products" element={<Product />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/clothing" element={<Clothing />} />
+          <Route path="/furniture" element={<Furniture />} />
+          <Route path="/tech" element={<Technology />} />
+
+
+
 
         </Routes>
       </div>
