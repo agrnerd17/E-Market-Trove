@@ -40,6 +40,6 @@ npm run dev
 - Amelie Gomez (agrnerd17)
 - Victor Vu (vuvictor1)
 - Isaac Sanchez (Isaacsan02)
-- Brian Navarro ()
-- Joshua Reyes ()
+- Brian Navarro (bnava13)
+- Joshua Reyes (JoshuaReyesCSUF)
 
