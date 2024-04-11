@@ -25,15 +25,22 @@ of featured items will be displayed alongside the E-Market Trove logo.
 
 For logged in users, the UI for a rating system becomes available alongside a tab that tracks past transactions.
 
-### Backend / Database
+### How to run:
 
-* 
-* 
+- Install node.js version 18 or higher
+- Install dependancies required by node.js
+
+```
+In terminal type: 
+npm install
+
+npm start
+```
 
 ## Contributors
 - Amelie Gomez (agrnerd17)
 - Victor Vu (vuvictor1)
 - Isaac Sanchez (Isaacsan02)
-- Brian Navarro ()
-- Joshua Reyes ()
+- Brian Navarro (bnava13)
+- Joshua Reyes (JoshuaReyesCSUF)
 
