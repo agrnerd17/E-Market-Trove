@@ -27,15 +27,15 @@ For logged in users, the UI for a rating system becomes available alongside a ta
 
 ### How to run:
 
-- Install node.js version 18 or higher
-- Install other required dependencies
+- Install node.js version 18 or higher and its required dependencies
+- Install React software dependencies: "react-dom", "react-scripts", "web-vitals", & "react-router-dom"
 
 ```
-In terminal type wihtout quotes:
+In terminal type without quotes:
 
-To install dependencies -  "npm install replace_name_here"
+To install React dependencies -  "npm install replace_name_here"
 
-To launch program - "npm start"
+To launch program, locate directory then use - "npm start"
 ```
 
 ## Contributors
