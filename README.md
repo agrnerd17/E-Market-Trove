@@ -27,13 +27,14 @@ For logged in users, the UI for a rating system becomes available alongside a ta
 
 ### How to run:
 
-- Install node version 18 or higher
-- Install dependancies
+- Install node.js version 18 or higher
+- Install dependancies required by node.js
 
 ```
+In terminal type: 
 npm install
 
-npm run dev
+npm start
 ```
 
 ## Contributors
