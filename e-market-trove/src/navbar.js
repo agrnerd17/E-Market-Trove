@@ -7,7 +7,6 @@ export default function Navbar() {
         E-Market-Trove
       </Link>
       <ul>
-        <CustomLink to="/products">Products</CustomLink>
         <CustomLink to="/about">About</CustomLink>
         <CustomLink to="/contact">Contact Us</CustomLink>
         <CustomLink to="/furniture">Furniture</CustomLink>
