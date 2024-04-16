@@ -1,4 +1,5 @@
 import '../styles.css'; // Import style settings from one directory above
+import { BsCart3 } from "react-icons/bs"; // Import shopping cart icon 
 
 // Show featured product information
 const featuredProducts = [
@@ -6,7 +7,7 @@ const featuredProducts = [
     { id: 2, name: 'Featured Product 2', price: 60, imageUrl: 'https://via.placeholder.com/150' },
     { id: 3, name: 'Featured Product 3', price: 70, imageUrl: 'https://via.placeholder.com/150' },
   ];
-  
+      
   // Show production information for sale
   const productsForSale = [
     { id: 4, name: 'Product for Sale 1', price: 30, imageUrl: 'https://via.placeholder.com/150' },
@@ -41,6 +42,9 @@ const App = () => (
         <h1>Home</h1>
       <header>
         <div className="logo-search"> {/* used to style header, connects with CSS class */}
+          <div className="logo"> {/* logo class */}
+            <BsCart3 size={24} /> {/* use shopping cart icon, size 24 */}
+          </div>
           <input type="text" placeholder="Search..." /> {/* placerholder search bar for now */}
         </div>
       </header>
@@ -63,3 +67,5 @@ const App = () => (
 export default function Home() { // export home to other files
    return App();
 }
+
+     
