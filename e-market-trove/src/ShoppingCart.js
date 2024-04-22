@@ -48,6 +48,4 @@ class ShoppingCart {
     }
   }
   
-  export default ShoppingCart; // Export the ShoppingCart class for use elsewhere
-  
   
