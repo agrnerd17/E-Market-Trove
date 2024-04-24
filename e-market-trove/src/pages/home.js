@@ -1,24 +1,21 @@
-import '../styles.css'; // Import style settings from one directory above
-import { BsCart3 } from "react-icons/bs"; // Import shopping cart icon
-import React, { useState } from 'react'; // Allow React to manage lists
+import '../styles.css';
+import { BsCart3 } from "react-icons/bs";
+import React, { useState } from 'react';
 
-// Show featured product information
 const featuredProducts = [
     { id: 1, name: 'Featured Product 1', price: 50, imageUrl: 'https://via.placeholder.com/150' },
     { id: 2, name: 'Featured Product 2', price: 60, imageUrl: 'https://via.placeholder.com/150' },
     { id: 3, name: 'Featured Product 3', price: 70, imageUrl: 'https://via.placeholder.com/150' },
 ];
 
-// Show production information for sale
 const productsForSale = [
     { id: 4, name: 'Product for Sale 1', price: 30, imageUrl: 'https://via.placeholder.com/150' },
     { id: 5, name: 'Product for Sale 2', price: 40, imageUrl: 'https://via.placeholder.com/150' },
     { id: 6, name: 'Product for Sale 3', price: 50, imageUrl: 'https://via.placeholder.com/150' },
 ];
 
-// Showcases the product, displays button for interaction
-const Product = ({ product }) => ( // declare product component
-    <div className="product"> {/* contains CSS class info */}
+const Product = ({ product }) => (
+    <div className="product">
         <img src={product.imageUrl} alt={product.name} />
         <div className="product-details">
             <h3>{product.name}</h3>
@@ -28,72 +25,91 @@ const Product = ({ product }) => ( // declare product component
     </div>
 );
 
-// Map out product information
 const ProductList = ({ products }) => (
     <div className="product-list">
-        {products.map(product => ( // products wil be mapped to a list
+        {products.map(product => (
             <Product key={product.id} product={product} />
         ))}
     </div>
 );
 
-// Main home display function
-const Home = () => {
-    const inventory = ["pants", "shirts", "shoes"]; // list of current inventory, currently hard-coded for simplicity
-    const [filteredProducts, setFilteredProducts] = useState(inventory); // extract filtered word from current and update new list
-    const [input, setSearchVal] = useState(""); // store input to search
+const Home = () => { 
+    const inventory = [
+        { name: "pants" },
+        { name: "shirts" },
+        { name: "shoes" }
+    ]; 
 
-    // Perform search when clicked
+    const [filteredInventory, setFilteredInventory] = useState(inventory);
+    const [filteredFeaturedProducts, setFilteredFeaturedProducts] = useState(featuredProducts);
+    const [filteredProductsForSale, setFilteredProductsForSale] = useState(productsForSale);
+    const [input, setInput] = useState("");
+
     function handleSearch() {
-        if (input === "") { // find marching input value in inventory
-            setFilteredProducts(inventory); 
+        if (input === "") {
+            setFilteredInventory([]);
+            setFilteredFeaturedProducts([]);
+            setFilteredProductsForSale([]);
             return;
         }
-        const filterBySearch = inventory.filter(item => // convert input to lowercase for better matches
-            item.toLowerCase().includes(input.toLowerCase()) 
+    
+        const filterBySearchInventory = inventory.filter(item =>
+            item.name.toLowerCase().includes(input.toLowerCase())
         );
-        setFilteredProducts(filterBySearch); // update new filter list
+        setFilteredInventory(filterBySearchInventory);
+    
+        const filterBySearchFeaturedProducts = featuredProducts.filter(product =>
+            product.name.toLowerCase().includes(input.toLowerCase())
+        );
+        setFilteredFeaturedProducts(filterBySearchFeaturedProducts);
+    
+        const filterBySearchProductsForSale = productsForSale.filter(product =>
+            product.name.toLowerCase().includes(input.toLowerCase())
+        );
+        setFilteredProductsForSale(filterBySearchProductsForSale);
     }
-
-    // Function to detect key press
+    
     function handleKeyPress(event) {
-        if (event.key === 'Enter') { // search once enter is pressed
+        if (event.key === 'Enter') {
             handleSearch();
         }
     }
 
-    return ( // Frontend for home
+    return (
         <div className="app">
             <h1>Home</h1>
             <header>
-                <div className="logo-search"> {/* used to style header, connects with CSS class */}
-                    <div className="logo">  {/* logo class */}
-                    <button onClick={handleSearch}><BsCart3 size={24} /></button> {/* cart icon with search, size 24 */}
+                <div className="logo-search">
+                    <div className="logo">
+                        <button onClick={handleSearch}><BsCart3 size={24} /></button>
                     </div>
-                    <input // Search bar with key detection 
-                        type="text" 
-                        placeholder="Search..." 
+                    <input 
+                        type="text"
+                        placeholder="Search..."
                         value={input}
-                        onChange={e => setSearchVal(e.target.value)}
-                        onKeyDown={handleKeyPress} // call the key handling function, once enter is pressed 
+                        onChange={e => setInput(e.target.value)}
+                        onKeyDown={handleKeyPress}
                     />
                 </div>
-            </header> {/* Class containing GUI components */}
-            <main className="main-content"> 
+            </header>
+            <main className="main-content">
+                <section className="search-results">
+                    <ProductList products={filteredInventory} />
+                </section>
                 <section className="featured-products">
                     <h2>Featured Products</h2>
-                    <ProductList products={featuredProducts} />
+                    <ProductList products={filteredFeaturedProducts} />
                 </section>
                 <section className="products-for-sale">
                     <h2>Products for Sale</h2>
-                    <ProductList products={productsForSale} />
+                    <ProductList products={filteredProductsForSale} />
                 </section>
             </main>
             <footer>
-                <p>&copy; 2024 E-Market Trove</p> {/* copyright footer */}
+                <p>&copy; 2024 E-Market Trove</p>
             </footer>
         </div>
     );
 };
 
-export default Home;  // export home to other files
+export default Home;
