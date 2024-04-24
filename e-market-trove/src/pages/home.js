@@ -29,65 +29,84 @@ const Product = ({ product }) => ( // declare product component
 );
 
 // Map out product information
-const ProductList = ({ products }) => (
+const ProductList = ({ products, showNamesOnly }) => (
     <div className="product-list">
-        {products.map(product => ( // products wil be mapped to a list
-            <Product key={product.id} product={product} />
+        {products.map(product => (
+            <div key={product.id} className="product">
+                {showNamesOnly ? ( 
+                    <h3>{product.name}</h3> // render just the name
+                ) : (
+                    <div>
+                        <img src={product.imageUrl} alt={product.name} />
+                        <div className="product-details">
+                            <h3>{product.name}</h3>
+                            <p>${product.price}</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                )}
+            </div>
         ))}
     </div>
 );
 
 // Main home display function
 const Home = () => {
-    const inventory = ["pants", "shirts", "shoes"]; // list of current inventory, currently hard-coded for simplicity
-    const [filteredProducts, setFilteredProducts] = useState(inventory); // extract filtered word from current and update new list
+    const inventory = [ // list of current inventory, currently hard-coded for simplicity ----------------------------------------
+        { id: 1, name: 'pants', price: 20, imageUrl: 'https://via.placeholder.com/150' },
+        { id: 2, name: 'shirts', price: 25, imageUrl: 'https://via.placeholder.com/150' },
+        { id: 3, name: 'shoes', price: 30, imageUrl: 'https://via.placeholder.com/150' },
+    ];
+    const [filteredProducts, setFilteredProducts] = useState([]); // extract filtered word and update list
     const [input, setSearchVal] = useState(""); // store input to search
 
     // Perform search when clicked
     function handleSearch() {
-        if (input === "") { // find marching input value in inventory
-            setFilteredProducts(inventory); 
+        if (input === "") { // show all inventory if search input is empty
+            setFilteredProducts(inventory);
             return;
         }
-        const filterBySearch = inventory.filter(item => // convert input to lowercase for better matches
-            item.toLowerCase().includes(input.toLowerCase()) 
+        const filterBySearch = inventory.filter(item => // filter inventory based on search input
+            item.name.toLowerCase().includes(input.toLowerCase())
         );
-        setFilteredProducts(filterBySearch); // update new filter list
+        setFilteredProducts(filterBySearch); // update filtered products
     }
 
     // Function to detect key press
     function handleKeyPress(event) {
         if (event.key === 'Enter') { // search once enter is pressed
-            handleSearch();
+            handleSearch(); // call search function
         }
     }
 
-    return ( // Frontend for home
+    const showNamesOnly = input !== ""; // once input is detected search only by name, not product ---------------------------
+
+    return ( // Frontend for homepage
         <div className="app">
             <h1>Home</h1>
             <header>
                 <div className="logo-search"> {/* used to style header, connects with CSS class */}
                     <div className="logo">  {/* logo class */}
-                    <button onClick={handleSearch}><BsCart3 size={24} /></button> {/* cart icon with search, size 24 */}
+                        <button onClick={handleSearch}><BsCart3 size={24} /></button> {/* cart icon with search, size 24 */}
                     </div>
                     <input // Search bar with key detection 
-                        type="text" 
-                        placeholder="Search..." 
+                        type="text"
+                        placeholder="Search..."
                         value={input}
                         onChange={e => setSearchVal(e.target.value)}
-                        onKeyDown={handleKeyPress} // call the key handling function, once enter is pressed 
+                        onKeyDown={handleKeyPress} // call key handling function, after enter is pressed 
                     />
                 </div>
-                <ProductList products={filteredProducts} /> {/* display filtered products after search */}
+                <ProductList products={filteredProducts} showNamesOnly={showNamesOnly} /> {/* display filtered products after search */}
             </header> {/* Class containing GUI components */}
-            <main className="main-content"> 
+            <main className="main-content">
                 <section className="featured-products">
                     <h2>Featured Products</h2>
-                    <ProductList products={featuredProducts} />
+                    <ProductList products={featuredProducts} showNamesOnly={false} /> {/* always show full details for featured products */}
                 </section>
                 <section className="products-for-sale">
                     <h2>Products for Sale</h2>
-                    <ProductList products={productsForSale} />
+                    <ProductList products={productsForSale} showNamesOnly={false} /> {/* always show full details for products for sale */}
                 </section>
             </main>
             <footer>
@@ -96,5 +115,4 @@ const Home = () => {
         </div>
     );
 };
-
 export default Home;  // export home to other files
