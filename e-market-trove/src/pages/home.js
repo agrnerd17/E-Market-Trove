@@ -16,24 +16,12 @@ const productsForSale = [
     { id: 6, name: 'Product for Sale 3', price: 50, imageUrl: 'https://via.placeholder.com/150' },
 ];
 
-// Showcases the product, displays button for interaction
-const Product = ({ product }) => ( // declare product component
-    <div className="product"> {/* contains CSS class info */}
-        <img src={product.imageUrl} alt={product.name} />
-        <div className="product-details">
-            <h3>{product.name}</h3>
-            <p>${product.price}</p>
-            <button>Add to Cart</button>
-        </div>
-    </div>
-);
-
-// Map out product information
-const ProductList = ({ products, showNamesOnly }) => (
-    <div className="product-list">
+// Map out product information, and showcase it 
+const ProductList = ({ products, showNamesOnly }) => ( // declare list component
+    <div className="product-list"> {/* contains CSS class info */}
         {products.map(product => (
             <div key={product.id} className="product">
-                {showNamesOnly ? ( 
+                {showNamesOnly ? (
                     <h3>{product.name}</h3> // render just the name
                 ) : (
                     <div>
@@ -59,17 +47,20 @@ const Home = () => {
     ];
     const [filteredProducts, setFilteredProducts] = useState([]); // extract filtered word and update list
     const [input, setSearchVal] = useState(""); // store input to search
+    const [showNamesOnly, setShowNamesOnly] = useState(false); // define state to show names only
 
     // Perform search when clicked
     function handleSearch() {
         if (input === "") { // show all inventory if search input is empty
             setFilteredProducts(inventory);
+            setShowNamesOnly(false); // reset to show full details 
             return;
         }
         const filterBySearch = inventory.filter(item => // filter inventory based on search input
             item.name.toLowerCase().includes(input.toLowerCase())
         );
         setFilteredProducts(filterBySearch); // update filtered products
+        setShowNamesOnly(true); // show names only when searched
     }
 
     // Function to detect key press
@@ -78,8 +69,6 @@ const Home = () => {
             handleSearch(); // call search function
         }
     }
-
-    const showNamesOnly = input !== ""; // once input is detected search only by name, not product ---------------------------
 
     return ( // Frontend for homepage
         <div className="app">
