@@ -1,4 +1,6 @@
 import '../styles.css'; // Import style settings from one directory above
+import { BsCart3 } from "react-icons/bs"; // Import shopping cart icon 
+
 
 // Show featured product information
 const featuredProducts = [
@@ -41,7 +43,10 @@ const App = () => (
         <h1>Home</h1>
       <header>
         <div className="logo-search"> {/* used to style header, connects with CSS class */}
-          <input type="text" placeholder="Search..." /> {/* placerholder search bar for now */}
+        <div className="logo"> {/* logo class */}
+            <BsCart3 size={24} /> {/* use shopping cart icon, size 24 */}
+          </div>
+          <input type="text" placeholder="Search..." /> {/* add Search and Filter */}
         </div>
       </header>
       <main className="main-content"> {/* class containing GUI components */}
