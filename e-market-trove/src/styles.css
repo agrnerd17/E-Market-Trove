@@ -9,7 +9,7 @@ body {
 .container {
     margin: 1rem;
     text-align: center;
-    
+
 }
 
 .nav {
@@ -48,7 +48,7 @@ body {
 .featured-products {
     overflow-x: auto; /* adjust in case the width exceeds box */
     white-space: nowrap; /* do not wrap into the next line */
-  }
+}
 
 /* Format products into a horizontal row */
 .product {
@@ -56,44 +56,9 @@ body {
     margin-right: 10px; /* 10 spacing between each product */
   }
   
+/* add shopping cart icon to navbar */
 
 /* hamburger stack */
-.menu-toggle {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
-  
-  .hamburger {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    transition: transform 0.3s ease;
-  }
-  
-  .hamburger::before,
-  .hamburger::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-  }
-  
-  .hamburger::before {
-    transform: translateY(-8px);
-  }
-  
-  .hamburger::after {
-    transform: translateY(8px);
-  }
-  
-  .menu {
-    display: none;
-  }
-  
-  .menu.open {
-    display: block;
-  }
-  
+
+
 
