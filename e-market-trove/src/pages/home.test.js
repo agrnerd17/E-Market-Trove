@@ -1,6 +1,6 @@
-import { render, fireEvent } from '@testing-library/react'; // Used to render pages
-import Home from './Home'; // Import ome from the same directory as test
-import '@testing-library/jest-dom'; // Uses jest for test case
+import { render, fireEvent } from '@testing-library/react' // Used to render pages
+import Home from './Home'; // Import Home from the same directory as test 
+import '@testing-library/jest-dom' // Allows use of testing functions
 
 describe('Functionality Test', () => { // describe function, includes name for test
   // Filtering test case as expected
@@ -64,6 +64,5 @@ describe('Error Handling Test', () => { // expected to fail, empty cannot be sea
     const errorElement = getByText(errorMessage);
     expect(errorElement).toBeInTheDocument(); // expect to see an error message
   });
-});
-
+});          
 
