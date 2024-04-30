@@ -1,4 +1,6 @@
 import '../styles.css'; // Import style settings from one directory above
+import { BsCart3 } from "react-icons/bs"; // Import shopping cart icon
+import React, { useState } from 'react'; // Allow React to manage lists
 
 // Show featured product information
 const featuredProducts = [
@@ -36,31 +38,70 @@ const ProductList = ({ products, showNamesOnly }) => ( // declare list component
     </div>
 );
 
-// Home's main function
-const App = () => (
-    <div className="app">
-        <h1>Home</h1>
-      <header>
-        <div className="logo-search"> {/* used to style header, connects with CSS class */}
-          <input type="text" placeholder="Search..." /> {/* placerholder search bar for now */}
+// Main home display function
+const Home = () => {
+    const inventory = [ // list of current inventory, currently hard-coded for simplicity ----------------------------------------
+        { id: 1, name: 'pants', price: 20, imageUrl: 'https://via.placeholder.com/150' },
+        { id: 2, name: 'shirts', price: 25, imageUrl: 'https://via.placeholder.com/150' },
+        { id: 3, name: 'shoes', price: 30, imageUrl: 'https://via.placeholder.com/150' },
+    ];
+    const [filteredProducts, setFilteredProducts] = useState([]); // extract filtered word and update list
+    const [input, setSearchVal] = useState(""); // store input to search
+    const [showNamesOnly, setShowNamesOnly] = useState(false); // define state to show names only
+
+    // Perform search when clicked
+    function handleSearch() {
+        if (input === "") { // show all inventory if search input is empty
+            setFilteredProducts(inventory);
+            setShowNamesOnly(false); // reset to show full details 
+            return;
+        }
+        const filterBySearch = inventory.filter(item => // filter inventory based on search input
+            item.name.toLowerCase().includes(input.toLowerCase())
+        );
+        setFilteredProducts(filterBySearch); // update filtered products
+        setShowNamesOnly(true); // show names only when searched
+    }
+
+    // Function to detect key press
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') { // search once enter is pressed
+            handleSearch(); // call search function
+        }
+    }
+
+    return ( // Frontend for homepage
+        <div className="app">
+            <h1>Home</h1>
+            <header>
+                <div className="logo-search"> {/* used to style header, connects with CSS class */}
+                    <div className="logo">  {/* logo class */}
+                        <button onClick={handleSearch}><BsCart3 size={24} /></button> {/* cart icon with search, size 24 */}
+                    </div>
+                    <input // Search bar with key detection 
+                        type="text"
+                        placeholder="Search..."
+                        value={input}
+                        onChange={e => setSearchVal(e.target.value)}
+                        onKeyDown={handleKeyPress} // call key handling function, after enter is pressed 
+                    />
+                </div>
+                <ProductList products={filteredProducts} showNamesOnly={showNamesOnly} /> {/* display filtered products after search */}
+            </header> {/* Class containing GUI components */}
+            <main className="main-content">
+                <section className="featured-products">
+                    <h2>Featured Products</h2>
+                    <ProductList products={featuredProducts} showNamesOnly={false} /> {/* always show full details for featured products */}
+                </section>
+                <section className="products-for-sale">
+                    <h2>Products for Sale</h2>
+                    <ProductList products={productsForSale} showNamesOnly={false} /> {/* always show full details for products for sale */}
+                </section>
+            </main>
+            <footer>
+                <p>&copy; 2024 E-Market Trove</p> {/* copyright footer */}
+            </footer>
         </div>
-      </header>
-      <main className="main-content"> {/* class containing GUI components */}
-        <section className="featured-products">
-          <h2>Featured Products</h2>
-          <ProductList products={featuredProducts} />
-        </section>
-        <section className="products-for-sale">
-          <h2>Products for Sale</h2>
-          <ProductList products={productsForSale} />
-        </section>
-      </main>
-      <footer>
-        <p>&copy; 2024 E-Market Trove</p> {/* copyright footer */}
-      </footer>
-    </div>
-  );
-  
-export default function Home() { // export home to other files
-   return App();
-}
+    );
+};
+export default Home;  // export home to other files

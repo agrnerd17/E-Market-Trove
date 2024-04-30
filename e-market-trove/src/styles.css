@@ -54,11 +54,18 @@ body {
 .product {
     display: inline-block; /* display products in a row */
     margin-right: 10px; /* 10 spacing between each product */
+}
+
+/* Icon placement */
+.logo-search {
+    display: flex; /* stay in row next to search bar */
+    justify-content: center; /* place entire row on center */
+}
+
+/* Style for the search bar */
+.logo-search input[type="text"] {
+    width: 300px; /* adjusts width */
+    padding: 5px; /* adjust height */
+    border: 2px solid #ccc; /* add a border */
+    margin-left: 10px; /* create 10 spaces between icon */
   }
-  
-/* add shopping cart icon to navbar */
-
-/* hamburger stack */
-
-
-
