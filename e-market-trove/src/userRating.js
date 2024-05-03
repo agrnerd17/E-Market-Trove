@@ -7,30 +7,24 @@ const Rating = () => {
 
     return (
         <div>
-            {[...Array(5)].map((star, i) => {
+            {[...Array(5)].map((_, i) => {
                 const stars = i + 1;
 
                 return (
-                    <label>
-                        
+                    <label key={i}>
                         <input 
-                        
-                        type="radio" 
-                        name="rating" 
-                        value={stars}
-                        
-                        onClick={setRating(stars)}
-                        onMouseEnter={() => (stars)}
-                        onMouseLeave={() => (null)}
-                        
+                            type="radio" 
+                            name="rating" 
+                            value={stars}
+                            onClick={() => setRating(stars)}
+                            onMouseEnter={() => setHover(stars)}
+                            onMouseLeave={() => setHover(null)}
                         />
-                        
                         <FaStar
-                        className="star" 
-                        color={stars <= (hover || rating) ? "ffc100": "#e4e5e9"} 
-                        size={40}
+                            className="star"
+                            color={stars <= (hover || rating) ? "ffc100": "#e4e5e9"} 
+                            size={40}
                         />
-
                     </label>
                 );
             })}

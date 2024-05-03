@@ -33,7 +33,7 @@ For logged in users, the UI for a rating system becomes available alongside a ta
 ```
 In terminal type without quotes:
 
-To install React dependencies -  "npm install replace_name_here"
+To install React dependencies - "npm install replace_name_here"
 
 To launch program, locate directory then use - "npm start"
 ```

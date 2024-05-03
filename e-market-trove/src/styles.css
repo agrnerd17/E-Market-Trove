@@ -44,16 +44,23 @@ body {
     padding: .25rem;
 }
 
-/* Format featured products into a horizontal row */
-.featured-products {
-    overflow-x: auto; /* adjust in case the width exceeds box */
-    white-space: nowrap; /* do not wrap into the next line */
+/* Format products into a three-column grid */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    grid-gap: 20px; /* Spacing between grid items */
+    justify-items: center; /* Align items horizontally to center */
 }
 
-/* Format products into a horizontal row */
+/* Adjust individual product styles */
 .product {
-    display: inline-block; /* display products in a row */
-    margin-right: 10px; /* 10 spacing between each product */
+    width: 100%; /* Ensure each product takes up full width of its column */
+}
+
+/* Ensure images fill their containers */
+.product img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Icon placement */

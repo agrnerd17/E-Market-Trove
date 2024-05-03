@@ -1,4 +1,3 @@
-import './App.css'; // Import in style settings
 import React from 'react'; // Import react for front end
 import Navbar from "./navbar"
 import Home from "./pages/home"
