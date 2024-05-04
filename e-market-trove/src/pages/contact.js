@@ -42,7 +42,7 @@ function ContactForm() {
     <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: 'auto' }}>
       <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} style={inputStyle} />
       <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} style={inputStyle} />
-      <textarea name="message" placeholder="Message" value={formData.message} onChange={handleChange} style={{ ...inputStyle, height: '100px' }} />
+      <textarea name="message" placeholder="Message" value={formData.message} onChange={handleChange} style={{ ...inputStyle, height: '200px' }} />
       <button type="submit" style={buttonStyle}>Submit</button>
     </form>
   );
