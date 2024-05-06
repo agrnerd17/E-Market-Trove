@@ -1,5 +1,6 @@
 import '../styles.css'; // Import style settings from one directory above
 
+/*
 const StarRating = ({rating}) => {
   const stars = [];
   for (let i=0; i<5; i++)
@@ -15,7 +16,7 @@ const StarRating = ({rating}) => {
   }
   return <div>{stars}</div>
 };
-
+*/
 // Show featured product information
 const featuredProducts = [
     { id: 1, name: 'Featured Product 1', price: 50, imageUrl: 'https://via.placeholder.com/150', rating: 4 },
@@ -53,7 +54,6 @@ const ProductList = ({ products, showNamesOnly }) => ( // declare list component
                         <div className="product-details">
                             <h3>{product.name}</h3>
                             <p>${product.price}</p>
-                            <StarRating rating={product.rating}/>
                             <button>Add to Cart</button>
                         </div>
                     </div>
