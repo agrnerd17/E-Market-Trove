@@ -5,32 +5,117 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const Furniture = () => {
   // Sample furniture data
   const [furnitureData, setFurnitureData] = useState([
-    {
-      id: 1,
-      name: "Modern Armchair",
-      seller: "Furniture Co.",
-      image: "https://via.placeholder.com/300",
-      rating: 4.5,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
-    },
-    {
-      id: 2,
-      name: "Wooden Coffee Table",
-      seller: "Home Furnishings",
-      image: "https://via.placeholder.com/300",
-      rating: 3.8,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
-    },
-    {
-      id: 3,
-      name: "Leather Sofa",
-      seller: "Comfort Furniture",
-      image: "https://via.placeholder.com/300",
-      rating: 4.2,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
-    },
-    // Add more furniture items here...
-  ]);
+        {
+          id: 1,
+          name: "Modern Armchair",
+          seller: "Furniture Co.",
+          image: "https://via.placeholder.com/300",
+          rating: 4.5,
+          price: "$199.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        {
+          id: 2,
+          name: "Wooden Coffee Table",
+          seller: "Home Furnishings",
+          image: "https://via.placeholder.com/300",
+          rating: 3.8,
+          price: "$149.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        {
+          id: 3,
+          name: "Leather Sofa",
+          seller: "Comfort Furniture",
+          image: "https://via.placeholder.com/300",
+          rating: 4.2,
+          price: "$159.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        {
+          id: 4,
+          name: "Dining Table",
+          seller: "Diner Designs",
+          image: "https://via.placeholder.com/300",
+          rating: 4.0,
+          price: "$189.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        {
+          id: 5,
+          name: "Vintage Dresser",
+          seller: "Vintage Finds",
+          image: "https://via.placeholder.com/300",
+          rating: 4.7,
+          price: "$149.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        {
+          id: 6,
+          name: "Contemporary Bookshelf",
+          seller: "Bookish Decor",
+          image: "https://via.placeholder.com/300",
+          rating: 4.2,
+          price: "$199.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        {
+          id: 7,
+          name: "Antique Sideboard",
+          seller: "Elegant Antiques",
+          image: "https://via.placeholder.com/300",
+          rating: 4.8,
+          price: "$199.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        {
+          id: 8,
+          name: "Mid-Century Ottoman",
+          seller: "Retro Designs",
+          image: "https://via.placeholder.com/300",
+          rating: 4.4,
+          price: "$199.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        {
+          id: 9,
+          name: "Industrial Bar Stool",
+          seller: "Urban Furniture",
+          image: "https://via.placeholder.com/300",
+          rating: 4.1,
+          price: "$199.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        {
+          id: 10,
+          name: "Scandinavian Desk",
+          seller: "Nordic Designs",
+          image: "https://via.placeholder.com/300",
+          rating: 4.6,
+          price: "$199.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        {
+          id: 11,
+          name: "Farmhouse Bench",
+          seller: "Country Living",
+          image: "https://via.placeholder.com/300",
+          rating: 4.3,
+          price: "$199.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        {
+          id: 12,
+          name: "Minimalist Bed Frame",
+          seller: "Simple Living",
+          image: "https://via.placeholder.com/300",
+          rating: 4.5,
+          price: "$199.99",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
+        },
+        // Add more items if needed
+      ]);
+      
 
   const [selectedItem, setSelectedItem] = useState(null);
   const [userRating, setUserRating] = useState(0);
@@ -90,6 +175,9 @@ const Furniture = () => {
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="div">
                       Seller: {item.seller}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="div">
+                      Price: {item.price}
                     </Typography>
                     <Rating
                       value={item.rating} // Display the latest rating from furniture data
