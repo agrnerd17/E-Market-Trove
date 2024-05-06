@@ -1,3 +1,4 @@
+/*
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -14,3 +15,4 @@ export const Radio = styled.input`
 export const Rating = styled.div`
     cursor: pointer;
 `
+*/

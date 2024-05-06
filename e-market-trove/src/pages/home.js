@@ -119,15 +119,12 @@ const Home = () => {
               
           
             <main className="main-content">
-            <div style={{ marginBottom: '20px' }}></div> {/* spacer with margin */}
                 <section className="featured-products">
-                <div style={{ backgroundColor: 'rgb(255, 255, 153)', padding: '5px', borderRadius: '20px' }}> {/* yellow highlight */}
+                <div>
                     <h2>Featured Products</h2>
                     <ProductList products={featuredProducts} showNamesOnly={false} /> {/* always show full details for featured products */}
                     </div>
                 </section>
-                <div style={{ marginBottom: '10px' }}></div> 
-                <div style={{ backgroundColor: 'gray', padding: '.5px' }}></div> {/* divider between featured and regular products*/}
                 <section className="products-for-sale">
                     <h2>Products for Sale</h2>
                     <ProductList products={productsForSale} showNamesOnly={false} /> {/* always show full details for products for sale */}
