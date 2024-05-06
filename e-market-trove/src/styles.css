@@ -101,6 +101,32 @@ body {
     color: #222;
 }
 
+.dark .app {
+    color: #222;
+}
+
+.dark .about {
+    color: #222;
+}
+
+.dark .contact {
+    color: #222;
+}
+
+.dark .tech {
+    color: #222;
+
+}
+
+.dark .furniture {
+    color: #222;
+
+}
+
+.dark .clothing {
+    color: #222;
+
+}
 
 /* Format featured products into a horizontal row */
 .featured-products {
