@@ -1,17 +1,43 @@
 import '../styles.css'; // Import style settings from one directory above
 
+const StarRating = ({rating}) => {
+  const stars = [];
+  for (let i=0; i<5; i++)
+  {
+    if (i<rating)
+    {
+      stars.push(<span key = {i} className='star'>&#9733; </span>);
+    }
+    else 
+    {
+      stars.push(<span key = {i} className='star'>&#9734; </span>);
+    }
+  }
+  return <div>{stars}</div>
+};
+
 // Show featured product information
 const featuredProducts = [
-    { id: 1, name: 'Featured Product 1', price: 50, imageUrl: 'https://via.placeholder.com/150' },
-    { id: 2, name: 'Featured Product 2', price: 60, imageUrl: 'https://via.placeholder.com/150' },
-    { id: 3, name: 'Featured Product 3', price: 70, imageUrl: 'https://via.placeholder.com/150' },
+    { id: 1, name: 'Featured Product 1', price: 50, imageUrl: 'https://via.placeholder.com/150', rating: 4 },
+    { id: 2, name: 'Featured Product 2', price: 60, imageUrl: 'https://via.placeholder.com/150', rating: 4 },
+    { id: 3, name: 'Featured Product 3', price: 70, imageUrl: 'https://via.placeholder.com/150', rating: 2 },
 ];
 
 // Show production information for sale
 const productsForSale = [
-    { id: 4, name: 'Product for Sale 1', price: 30, imageUrl: 'https://via.placeholder.com/150' },
-    { id: 5, name: 'Product for Sale 2', price: 40, imageUrl: 'https://via.placeholder.com/150' },
-    { id: 6, name: 'Product for Sale 3', price: 50, imageUrl: 'https://via.placeholder.com/150' },
+    { id: 4, name: 'Product for Sale 1', price: 30, imageUrl: 'https://via.placeholder.com/150', rating: 5 },
+    { id: 5, name: 'Product for Sale 2', price: 40, imageUrl: 'https://via.placeholder.com/150', rating: 3 },
+    { id: 6, name: 'Product for Sale 3', price: 50, imageUrl: 'https://via.placeholder.com/150', rating: 1 },
+    { id: 7, name: 'Product for Sale 4', price: 30, imageUrl: 'https://via.placeholder.com/150', rating: 4 },
+    { id: 8, name: 'Product for Sale 5', price: 90, imageUrl: 'https://via.placeholder.com/150', rating: 3 },
+    { id: 9, name: 'Product for Sale 6', price: 10, imageUrl: 'https://via.placeholder.com/150', rating: 2 },
+    { id: 10, name: 'Product for Sale 7', price: 20, imageUrl: 'https://via.placeholder.com/150', rating: 5 },
+    { id: 11, name: 'Product for Sale 8', price: 50, imageUrl: 'https://via.placeholder.com/150', rating: 4 },
+    { id: 12, name: 'Product for Sale 9', price: 80, imageUrl: 'https://via.placeholder.com/150', rating: 1 },
+    { id: 13, name: 'Product for Sale 10', price: 30, imageUrl: 'https://via.placeholder.com/150', rating: 4 },
+    { id: 14, name: 'Product for Sale 11', price: 20, imageUrl: 'https://via.placeholder.com/150', rating: 3 },
+    { id: 15, name: 'Product for Sale 12', price: 60, imageUrl: 'https://via.placeholder.com/150', rating: 5 },
+
 ];
 
 // Map out product information, and showcase it 
@@ -27,6 +53,7 @@ const ProductList = ({ products, showNamesOnly }) => ( // declare list component
                         <div className="product-details">
                             <h3>{product.name}</h3>
                             <p>${product.price}</p>
+                            <StarRating rating={product.rating}/>
                             <button>Add to Cart</button>
                         </div>
                     </div>
@@ -92,10 +119,15 @@ const Home = () => {
               
           
             <main className="main-content">
+            <div style={{ marginBottom: '20px' }}></div> {/* spacer with margin */}
                 <section className="featured-products">
+                <div style={{ backgroundColor: 'rgb(255, 255, 153)', padding: '5px', borderRadius: '20px' }}> {/* yellow highlight */}
                     <h2>Featured Products</h2>
                     <ProductList products={featuredProducts} showNamesOnly={false} /> {/* always show full details for featured products */}
+                    </div>
                 </section>
+                <div style={{ marginBottom: '10px' }}></div> 
+                <div style={{ backgroundColor: 'gray', padding: '.5px' }}></div> {/* divider between featured and regular products*/}
                 <section className="products-for-sale">
                     <h2>Products for Sale</h2>
                     <ProductList products={productsForSale} showNamesOnly={false} /> {/* always show full details for products for sale */}
