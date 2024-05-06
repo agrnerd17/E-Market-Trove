@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <div style={{ display: "inline-block", textAlign: "center", maxWidth: "450px" }}> {/*Center text divider*/}
+        <div style={{ display: "inline-block", textAlign: "center", maxWidth: "450px"}} className="about"> {/*Center text divider*/}
             <h1>About Us:</h1> {/*create header*/}
             <p> {/*New text block*/}
                 E-Market Trove is your go-to destination for a wide array of top-quality products. 

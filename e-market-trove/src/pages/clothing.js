@@ -1,3 +1,9 @@
-export default function Clothing() {
-    return <h1>Clothing</h1>
-}
+const Clothing = () => {
+
+    return ( 
+        <div className="clothing">
+            <h1>Clothing</h1>
+        </div>
+    );
+};
+export default Clothing;

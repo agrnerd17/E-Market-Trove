@@ -1,6 +1,4 @@
 import '../styles.css'; // Import style settings from one directory above
-import { BsCart3 } from "react-icons/bs"; // Import shopping cart icon
-import React, { useState } from 'react'; // Allow React to manage lists
 
 // Show featured product information
 const featuredProducts = [
@@ -40,7 +38,7 @@ const ProductList = ({ products, showNamesOnly }) => ( // declare list component
 
 // Main home display function
 const Home = () => {
-    const inventory = [ // list of current inventory, currently hard-coded for simplicity ----------------------------------------
+    /*   const inventory = [ // list of current inventory, currently hard-coded for simplicity ----------------------------------------
         { id: 1, name: 'pants', price: 20, imageUrl: 'https://via.placeholder.com/150' },
         { id: 2, name: 'shirts', price: 25, imageUrl: 'https://via.placeholder.com/150' },
         { id: 3, name: 'shoes', price: 30, imageUrl: 'https://via.placeholder.com/150' },
@@ -68,15 +66,11 @@ const Home = () => {
         if (event.key === 'Enter') { // search once enter is pressed
             handleSearch(); // call search function
         }
-    }
-
-    return ( // Frontend for homepage
-        <div className="app">
-            <h1>Home</h1>
-            <header>
-                <div className="logo-search"> {/* used to style header, connects with CSS class */}
-                    <div className="logo">  {/* logo class */}
-                        <button onClick={handleSearch}><BsCart3 size={24} /></button> {/* cart icon with search, size 24 */}
+    } 
+    <header>
+                <div className="logo-search">
+                    <div className="logo">
+                        <button onClick={handleSearch}><BsCart3 size={24} /></button>
                     </div>
                     <input // Search bar with key detection 
                         type="text"
@@ -86,8 +80,17 @@ const Home = () => {
                         onKeyDown={handleKeyPress} // call key handling function, after enter is pressed 
                     />
                 </div>
-                <ProductList products={filteredProducts} showNamesOnly={showNamesOnly} /> {/* display filtered products after search */}
-            </header> {/* Class containing GUI components */}
+                <ProductList products={filteredProducts} showNamesOnly={showNamesOnly} />
+            </header> 
+    */
+  
+
+    return ( // Frontend for homepage
+        <div className="app">
+            <h1>Home</h1>
+            
+              
+          
             <main className="main-content">
                 <section className="featured-products">
                     <h2>Featured Products</h2>

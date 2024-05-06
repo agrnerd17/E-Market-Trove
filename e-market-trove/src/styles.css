@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
@@ -7,23 +8,23 @@ body {
 }
 
 .container {
-    margin: 1rem;
+    margin: 0;
     text-align: center;
-
 }
 
+
 .nav {
-    background-color: #6a5acd;
-    color: white;
+    background-color: white;
+    color: black;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    gap: 2rem;
-    padding: 0 1rem;
+    padding: 15px 7%;
+    transition: 0.5s;
 }
 
 .site-title {
-    font-size: 2rem;
+    font-size: 3rem;
     text-decoration: none;
     font-family: fantasy;
 }
@@ -34,39 +35,110 @@ body {
     list-style: none;
     display: flex;
     gap: 1rem;
+    text-align: center;
+    flex: 1;
 }
 
 .nav a {
     color: inherit;
     text-decoration: none;
     height: 100%;
-    display: flex;
+    display: inline-block;
+    margin: 10px 20px;
     align-items: center;
+    font-size: 18px;
     padding: .25rem;
+    cursor: pointer;
 }
 
-/* Format featured products into a horizontal row */
+.toggle-icon {
+    width: 40px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.shopping-cart-logo{
+    height: auto;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #242424;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.search-box input {
+    padding: 6px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-size: 18px;
+    max-width: 150px;
+}
+
+.search-box input::placeholder {
+    color: white;
+
+}
+
+.search-box img {
+    width: 20px;
+    cursor: pointer;
+}
+
+.dark .nav{
+    background: #000;
+    color: #fff;
+}
+
+.dark .search-box {
+    background: #fff;
+}
+
+.dark .search-box input{
+    color: #222;
+}
+.dark .search-box input::placeholder{
+    color: #222;
+}
+
+
 .featured-products {
     overflow-x: auto; /* adjust in case the width exceeds box */
     white-space: nowrap; /* do not wrap into the next line */
 }
 
-/* Format products into a horizontal row */
 .product {
     display: inline-block; /* display products in a row */
     margin-right: 10px; /* 10 spacing between each product */
 }
 
-/* Icon placement */
-.logo-search {
-    display: flex; /* stay in row next to search bar */
-    justify-content: center; /* place entire row on center */
+
+.dark .app {
+    color: white;
 }
 
-/* Style for the search bar */
-.logo-search input[type="text"] {
-    width: 300px; /* adjusts width */
-    padding: 5px; /* adjust height */
-    border: 2px solid #ccc; /* add a border */
-    margin-left: 10px; /* create 10 spaces between icon */
-  }
+.dark .about {
+    color: white;
+}
+
+.dark .clothing {
+    color: white;
+}
+
+.dark .contact {
+    color: white;
+}
+
+.dark .tech {
+    color: white;
+}
+
+.dark .furniture {
+    color: white;
+}

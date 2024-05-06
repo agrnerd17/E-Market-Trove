@@ -1,3 +1,9 @@
-export default function Technology() {
-    return <h1>Technology</h1>
-}
+const Technology = () => {
+
+    return ( 
+        <div className="tech">
+            <h1>Technology</h1>
+        </div>
+    );
+};
+export default Technology;

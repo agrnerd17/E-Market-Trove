@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react' // Used to render pages
-import Home from './Home'; // Import Home from the same directory as test 
+//import Home from './Home'; // Import Home from the same directory as test 
 import '@testing-library/jest-dom' // Allows use of testing functions
 
 describe('Functionality Test', () => { // describe function, includes name for test

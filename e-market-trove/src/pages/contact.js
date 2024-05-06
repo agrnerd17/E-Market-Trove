@@ -1,5 +1,9 @@
-export default function Contact() {
-    return <h1>Contact Us</h1>
-}
+const Contact = () => {
 
-// main function
+    return ( 
+        <div className="contact">
+            <h1>Contact Us</h1>
+        </div>
+    );
+};
+export default Contact;
