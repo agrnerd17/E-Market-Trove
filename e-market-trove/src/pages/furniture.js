@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Container, Grid, Typography, Card, CardActionArea, CardContent, CardMedia, Rating, IconButton, Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import bookshelf from '../assets/bookshelf.jpg';
 
 const Furniture = () => {
   // Sample furniture data
   const [furnitureData, setFurnitureData] = useState([
         {
           id: 1,
-          name: "Modern Armchair",
-          seller: "Furniture Co.",
-          image: "https://via.placeholder.com/300",
+          name: "White Bookshelf",
+          seller: "Books Co.",
+          image: bookshelf,
           rating: 4.5,
           price: "$199.99",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
