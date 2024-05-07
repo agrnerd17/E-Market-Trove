@@ -57,7 +57,7 @@ export default function Navbar({
         {/* Add shopping cart functionality here */}
     </div>
     <div>
-    <img onClick={()=>{toggle_mode()}} src={theme === 'light' ? toggle_light : toggle_dark} alt="" className='toggle-icon'/>
+    <img onClick={()=>{toggle_mode(); handleSearchClick();}} src={theme === 'light' ? toggle_light : toggle_dark} alt="" className='toggle-icon'/>
 
     </div>
     

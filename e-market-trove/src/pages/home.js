@@ -1,139 +1,52 @@
-import '../styles.css'; // Import style settings from one directory above
+import React from 'react';
+import { Container, Grid, Typography, Card, CardContent, Button, Divider } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-/*
-const StarRating = ({rating}) => {
-  const stars = [];
-  for (let i=0; i<5; i++)
-  {
-    if (i<rating)
-    {
-      stars.push(<span key = {i} className='star'>&#9733; </span>);
-    }
-    else 
-    {
-      stars.push(<span key = {i} className='star'>&#9734; </span>);
-    }
-  }
-  return <div>{stars}</div>
-};
-*/
-// Show featured product information
-const featuredProducts = [
-    { id: 1, name: 'Featured Product 1', price: 50, imageUrl: 'https://via.placeholder.com/150', rating: 4 },
-    { id: 2, name: 'Featured Product 2', price: 60, imageUrl: 'https://via.placeholder.com/150', rating: 4 },
-    { id: 3, name: 'Featured Product 3', price: 70, imageUrl: 'https://via.placeholder.com/150', rating: 2 },
-];
-
-// Show production information for sale
-const productsForSale = [
-    { id: 4, name: 'Product for Sale 1', price: 30, imageUrl: 'https://via.placeholder.com/150', rating: 5 },
-    { id: 5, name: 'Product for Sale 2', price: 40, imageUrl: 'https://via.placeholder.com/150', rating: 3 },
-    { id: 6, name: 'Product for Sale 3', price: 50, imageUrl: 'https://via.placeholder.com/150', rating: 1 },
-    { id: 7, name: 'Product for Sale 4', price: 30, imageUrl: 'https://via.placeholder.com/150', rating: 4 },
-    { id: 8, name: 'Product for Sale 5', price: 90, imageUrl: 'https://via.placeholder.com/150', rating: 3 },
-    { id: 9, name: 'Product for Sale 6', price: 10, imageUrl: 'https://via.placeholder.com/150', rating: 2 },
-    { id: 10, name: 'Product for Sale 7', price: 20, imageUrl: 'https://via.placeholder.com/150', rating: 5 },
-    { id: 11, name: 'Product for Sale 8', price: 50, imageUrl: 'https://via.placeholder.com/150', rating: 4 },
-    { id: 12, name: 'Product for Sale 9', price: 80, imageUrl: 'https://via.placeholder.com/150', rating: 1 },
-    { id: 13, name: 'Product for Sale 10', price: 30, imageUrl: 'https://via.placeholder.com/150', rating: 4 },
-    { id: 14, name: 'Product for Sale 11', price: 20, imageUrl: 'https://via.placeholder.com/150', rating: 3 },
-    { id: 15, name: 'Product for Sale 12', price: 60, imageUrl: 'https://via.placeholder.com/150', rating: 5 },
-
-];
-
-// Map out product information, and showcase it 
-const ProductList = ({ products, showNamesOnly }) => ( // declare list component
-    <div className="product-list"> {/* contains CSS class info */}
-        {products.map(product => (
-            <div key={product.id} className="product">
-                {showNamesOnly ? (
-                    <h3>{product.name}</h3> // render just the name
-                ) : (
-                    <div>
-                        <img src={product.imageUrl} alt={product.name} />
-                        <div className="product-details">
-                            <h3>{product.name}</h3>
-                            <p>${product.price}</p>
-                            <button>Add to Cart</button>
-                        </div>
-                    </div>
-                )}
-            </div>
-        ))}
-    </div>
-);
-
-// Main home display function
 const Home = () => {
-    /*   const inventory = [ // list of current inventory, currently hard-coded for simplicity ----------------------------------------
-        { id: 1, name: 'pants', price: 20, imageUrl: 'https://via.placeholder.com/150' },
-        { id: 2, name: 'shirts', price: 25, imageUrl: 'https://via.placeholder.com/150' },
-        { id: 3, name: 'shoes', price: 30, imageUrl: 'https://via.placeholder.com/150' },
-    ];
-    const [filteredProducts, setFilteredProducts] = useState([]); // extract filtered word and update list
-    const [input, setSearchVal] = useState(""); // store input to search
-    const [showNamesOnly, setShowNamesOnly] = useState(false); // define state to show names only
-
-    // Perform search when clicked
-    function handleSearch() {
-        if (input === "") { // show all inventory if search input is empty
-            setFilteredProducts(inventory);
-            setShowNamesOnly(false); // reset to show full details 
-            return;
-        }
-        const filterBySearch = inventory.filter(item => // filter inventory based on search input
-            item.name.toLowerCase().includes(input.toLowerCase())
-        );
-        setFilteredProducts(filterBySearch); // update filtered products
-        setShowNamesOnly(true); // show names only when searched
-    }
-
-    // Function to detect key press
-    function handleKeyPress(event) {
-        if (event.key === 'Enter') { // search once enter is pressed
-            handleSearch(); // call search function
-        }
-    } 
-    <header>
-                <div className="logo-search">
-                    <div className="logo">
-                        <button onClick={handleSearch}><BsCart3 size={24} /></button>
-                    </div>
-                    <input // Search bar with key detection 
-                        type="text"
-                        placeholder="Search..."
-                        value={input}
-                        onChange={e => setSearchVal(e.target.value)}
-                        onKeyDown={handleKeyPress} // call key handling function, after enter is pressed 
-                    />
-                </div>
-                <ProductList products={filteredProducts} showNamesOnly={showNamesOnly} />
-            </header> 
-    */
-  
-
-    return ( // Frontend for homepage
-        <div className="app">
-            <h1>Home</h1>
-            
-              
-          
-            <main className="main-content">
-                <section className="featured-products">
-                <div>
-                    <h2>Featured Products</h2>
-                    <ProductList products={featuredProducts} showNamesOnly={false} /> {/* always show full details for featured products */}
-                    </div>
-                </section>
-                <section className="products-for-sale">
-                    <h2>Products for Sale</h2>
-                    <ProductList products={productsForSale} showNamesOnly={false} /> {/* always show full details for products for sale */}
-                </section>
-            </main>
-            <footer>
-                <p>&copy; 2024 E-Market Trove</p> {/* copyright footer */}
+    return (
+        <div className="app" style={{ backgroundColor: 'inherit', padding: '4rem 0' }}>
+            <Container maxWidth="lg">
+                <Typography variant="h2" align="center" gutterBottom style={{ fontWeight: 700, color: '#222' }}>Welcome to E-Market Trove</Typography>
+                <Grid container spacing={4} justifyContent="center">
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card elevation={5} sx={{ borderRadius: 3, backgroundColor: '#fff', boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.05)' }}>
+                            <CardContent>
+                                <Typography variant="h4" gutterBottom style={{ color: '#222', fontWeight: 700 }}>Featured Products</Typography>
+                                <Divider style={{ marginBottom: '1rem' }} />
+                                <Typography variant="body1" style={{ color: '#666', marginBottom: '1.5rem' }}>Explore our featured products to discover popular items.</Typography>
+                                <Button variant="contained" component={Link} to="/featured-products" sx={{ backgroundColor: '#222', color: '#fff', fontWeight: 700 }}>Go to Featured Products</Button>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card elevation={5} sx={{ borderRadius: 3, backgroundColor: '#fff', boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.05)' }}>
+                            <CardContent>
+                                <Typography variant="h4" gutterBottom style={{ color: '#222', fontWeight: 700 }}>Products for Sale</Typography>
+                                <Divider style={{ marginBottom: '1rem' }} />
+                                <Typography variant="body1" style={{ color: '#666', marginBottom: '1.5rem' }}>Browse through our collection of products available for sale.</Typography>
+                                <Button variant="contained" component={Link} to="/products-for-sale" sx={{ backgroundColor: '#222', color: '#fff', fontWeight: 700 }}>Go to Products for Sale</Button>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card elevation={5} sx={{ borderRadius: 3, backgroundColor: '#fff', boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.05)' }}>
+                            <CardContent>
+                                <Typography variant="h4" gutterBottom style={{ color: '#222', fontWeight: 700 }}>Contact Us</Typography>
+                                <Divider style={{ marginBottom: '1rem' }} />
+                                <Typography variant="body1" style={{ color: '#666', marginBottom: '1.5rem' }}>Have questions or need assistance? Contact us here.</Typography>
+                                <Button variant="contained" component={Link} to="/contact" sx={{ backgroundColor: '#222', color: '#fff', fontWeight: 700 }}>Go to Contact Us</Button>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
+            </Container>
+            <footer style={{ marginTop: '4rem', backgroundColor: '#222', color: '#fff', padding: '2rem 0' }}>
+                <Container maxWidth="lg">
+                    <Typography variant="body1" align="center">&copy; 2024 E-Market Trove</Typography>
+                </Container>
             </footer>
         </div>
     );
 };
-export default Home;  // export home to other files
+
+export default Home;
