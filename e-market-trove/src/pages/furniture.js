@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Container, Grid, Typography, Card, CardActionArea, CardContent, CardMedia, Rating, IconButton, Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import bookshelf from '../assets/bookshelf.jpg';
+import bookshelf from '../assets/bookshelf.jpeg';
+import couch from '../assets/couch.jpeg';
+import dresser from '../assets/dresser.jpeg';
+import floor_cushion from '../assets/floor_cushion.jpeg';
+import table from '../assets/table.jpeg';
 
 const Furniture = () => {
   // Sample furniture data
@@ -17,36 +21,36 @@ const Furniture = () => {
         },
         {
           id: 2,
-          name: "Wooden Coffee Table",
+          name: "Couch",
           seller: "Home Furnishings",
-          image: "https://via.placeholder.com/300",
+          image: couch,
           rating: 3.8,
           price: "$149.99",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
         },
         {
           id: 3,
-          name: "Leather Sofa",
-          seller: "Comfort Furniture",
-          image: "https://via.placeholder.com/300",
+          name: "Wooden Dresser",
+          seller: "Modern Furniture",
+          image: dresser,
           rating: 4.2,
           price: "$159.99",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
         },
         {
           id: 4,
-          name: "Dining Table",
-          seller: "Diner Designs",
-          image: "https://via.placeholder.com/300",
+          name: "Floor Cushion",
+          seller: "Comfy Designs",
+          image: floor_cushion,
           rating: 4.0,
           price: "$189.99",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
         },
         {
           id: 5,
-          name: "Vintage Dresser",
+          name: "Wooden Table",
           seller: "Vintage Finds",
-          image: "https://via.placeholder.com/300",
+          image: table,
           rating: 4.7,
           price: "$149.99",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
