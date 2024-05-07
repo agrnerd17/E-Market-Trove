@@ -3,8 +3,10 @@ import search_icon_dark from '../src/assets/search-b.png';
 import search_icon_light from '../src/assets/search-w.png';
 import toggle_light from '../src/assets/night.png';
 import toggle_dark from '../src/assets/day.png';
-import { BsCart3 } from "react-icons/bs";
+//import { BsCart3 } from "react-icons/bs";
 import React, {useState} from "react";
+import { IconButton } from "@mui/material";
+import { ShoppingCart } from '@mui/icons-material';
 
 export default function Navbar({
   theme, 
@@ -52,10 +54,11 @@ export default function Navbar({
     
     </div>
     {/* Shopping Cart */}
-    <div className="shopping-cart-logo">
-        < BsCart3 size={24}/>
-        {/* Add shopping cart functionality here */}
-    </div>
+    <Link to="/checkout" className="shopping-cart-logo">
+      <IconButton>
+        <ShoppingCart />
+      </IconButton>
+    </Link>
     <div>
     <img onClick={()=>{toggle_mode(); handleSearchClick();}} src={theme === 'light' ? toggle_light : toggle_dark} alt="" className='toggle-icon'/>
 

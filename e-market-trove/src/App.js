@@ -6,8 +6,7 @@ import Contact from './pages/contact';
 import Clothing from './pages/clothing';
 import Furniture from './pages/furniture';
 import Technology from './pages/tech';
-
-
+import Checkout from './pages/checkout/Checkout';
 
 import { Route, Routes } from "react-router-dom"
 
@@ -32,7 +31,8 @@ function App() {
           <Route path="/clothing" element={<Clothing />} />
           <Route path="/furniture" element={<Furniture />} />
           <Route path="/tech" element={<Technology />} />
-
+          <Route path="/checkout" element={<Checkout />} />
+  
 
 
 
