@@ -54,17 +54,18 @@ body {
 }
 
 .toggle-icon {
-    width: 50px;
+    width: 40px;
     cursor: pointer;
-    margin-left: 40px;
+    margin-right: 40px; 
 }
 
 .nav .shopping-cart-link {
     margin-left: 20px;
-    display: flex;
+    display: inline-block;
     align-items: center;
-    width: 50px;
     cursor: pointer;
+    width: 20px;
+    height: 20px;
 }
 
 .search-box {
