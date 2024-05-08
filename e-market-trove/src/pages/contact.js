@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography, Container, Grid, TextField, Button } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const Contact = () => {
+  const [messageSent, setMessageSent] = useState(false);
+
+  const handleSendMessage = () => {
+    setMessageSent(true); // after sending the message, set messageSent to true
+  };
+
   return (
     <div className="contact">
       <Container maxWidth="md">
@@ -77,12 +83,22 @@ const Contact = () => {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <Button variant="contained" color="primary" fullWidth>
+                  <Button 
+                    variant="contained" 
+                    color="primary" 
+                    fullWidth
+                    onClick={handleSendMessage} // call handleSendMessage when the button is clicked
+                  >
                     Send
                   </Button>
                 </Grid>
               </Grid>
             </form>
+            {messageSent && (
+              <Typography variant="body1" style={{ marginTop: '1rem', color: 'green' }}>
+                Message sent successfully!
+              </Typography>
+            )}
           </Grid>
         </Grid>
       </Container>
