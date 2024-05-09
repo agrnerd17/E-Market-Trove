@@ -8,7 +8,6 @@ import sweatshirt from '../assets/sweatshirt.png';
 import comingsoon from '../assets/comingsoon.png';
 
 const Clothing = () => {
-  // Sample clothing data
   const [clothingData, setClothingData] = useState([
     {
       id: 1,
