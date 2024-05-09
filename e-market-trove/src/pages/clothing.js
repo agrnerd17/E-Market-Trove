@@ -126,7 +126,7 @@ const Clothing = () => {
 
   const handleOpenDialog = (item) => {
     setSelectedItem(item);
-    setUserRating(item.rating); // Set initial user rating to the item's current rating
+    setUserRating(item.rating); 
     setDialogOpen(true);
   };
 
@@ -141,7 +141,6 @@ const Clothing = () => {
   };
 
   const handleSubmitRating = () => {
-    // Update the clothing data with the new user rating
     setClothingData((prevData) =>
       prevData.map((item) =>
         item.id === selectedItem.id ? { ...item, rating: userRating } : item
@@ -151,7 +150,6 @@ const Clothing = () => {
   };
 
   const handleAddToCart = (item) => {
-    // You can implement your logic to add the item to the cart here
     alert(`Added "${item.name}" to the cart!`);
   };
 

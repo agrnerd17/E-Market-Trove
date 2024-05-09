@@ -118,7 +118,6 @@ const Furniture = () => {
           price: "$199.99",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
         },
-        // Add more items if needed
       ]);
       
 
@@ -128,7 +127,7 @@ const Furniture = () => {
 
   const handleOpenDialog = (item) => {
     setSelectedItem(item);
-    setUserRating(item.rating); // Set initial user rating to the item's current rating
+    setUserRating(item.rating); //sets user rating functionality
     setDialogOpen(true);
   };
 
@@ -143,7 +142,6 @@ const Furniture = () => {
   };
 
   const handleSubmitRating = () => {
-    // Update the furniture data with the new user rating
     setFurnitureData((prevData) =>
       prevData.map((item) =>
         item.id === selectedItem.id ? { ...item, rating: userRating } : item
@@ -153,7 +151,6 @@ const Furniture = () => {
   };
 
   const handleAddToCart = (item) => {
-    // You can implement your logic to add the item to the cart here
     alert(`Added "${item.name}" to the cart!`);
   };
 

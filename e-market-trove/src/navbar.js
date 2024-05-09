@@ -3,7 +3,6 @@ import search_icon_dark from '../src/assets/search-b.png';
 import search_icon_light from '../src/assets/search-w.png';
 import toggle_light from '../src/assets/night.png';
 import toggle_dark from '../src/assets/day.png';
-//import { BsCart3 } from "react-icons/bs";
 import React, {useState} from "react";
 import { IconButton } from "@mui/material";
 import { ShoppingCart } from '@mui/icons-material';

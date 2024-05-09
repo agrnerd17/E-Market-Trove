@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'; // Import react for front end
+import React, { useEffect, useState } from 'react'; 
 import Navbar from "./navbar"
 import Home from "./pages/home"
 import About from "./pages/about"
