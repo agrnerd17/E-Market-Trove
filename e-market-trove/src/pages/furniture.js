@@ -6,6 +6,7 @@ import couch from '../assets/couch.jpeg';
 import dresser from '../assets/dresser.jpeg';
 import floor_cushion from '../assets/floor_cushion.jpeg';
 import table from '../assets/table.jpeg';
+import comingsoon from '../assets/comingsoon.png';
 
 const Furniture = () => {
   // Sample furniture data
@@ -118,6 +119,7 @@ const Furniture = () => {
           price: "$199.99",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat vehicula magna vel iaculis.",
         },
+        // Add more items if needed
       ]);
       
 
